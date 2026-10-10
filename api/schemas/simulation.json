@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","properties":{"neurons":{"type":"integer","minimum":1},"duration_ms":{"type":"number","exclusiveMinimum":0},"dt_ms":{"type":"number","exclusiveMinimum":0},"seed":{"type":"integer"}},"required":["neurons","duration_ms","dt_ms","seed"]}
