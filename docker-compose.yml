@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: neuroblackwell
+      MYSQL_USER: neuroblackwell
+      MYSQL_PASSWORD: change-me
+      MYSQL_ROOT_PASSWORD: change-me-root
+    ports: ['3306:3306']
+    volumes: ['mysql_data:/var/lib/mysql']
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: mysql+pymysql://neuroblackwell:change-me@mysql:3306/neuroblackwell
+    ports: ['8000:8000']
+    depends_on: [mysql]
+volumes:
+  mysql_data:
