@@ -9,7 +9,9 @@ services:
     ports: ['3306:3306']
     volumes: ['mysql_data:/var/lib/mysql']
   api:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     environment:
       DATABASE_URL: mysql+pymysql://neuroblackwell:change-me@mysql:3306/neuroblackwell
     ports: ['8000:8000']
