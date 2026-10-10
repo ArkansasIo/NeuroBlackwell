@@ -1,0 +1,17 @@
+{
+  "project": "NeuroBlackwell",
+  "status": "GitHub starter populated",
+  "upstream": [
+    "Cortical-Labs/cl-sdk",
+    "Cortical-Labs/cl-api-doc",
+    "Brian2",
+    "NEST",
+    "NEURON",
+    "Nengo",
+    "Norse",
+    "SpikingJelly",
+    "snnTorch",
+    "BindsNET"
+  ],
+  "note": "Generated component archives are preserved under bundles/. Third-party repositories are referenced rather than copied."
+}
