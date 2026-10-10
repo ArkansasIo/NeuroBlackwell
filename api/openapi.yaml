@@ -1,0 +1,15 @@
+openapi: 3.0.3
+info:
+  title: NeuroBlackwell API
+  version: 0.2.0
+paths:
+  /api/v1/health:
+    get: {responses: {'200': {description: OK}}}
+  /api/v1/equations:
+    get: {responses: {'200': {description: Equation catalog}}}
+  /api/v1/simulations/run:
+    post: {responses: {'200': {description: Simulation result}}}
+  /api/v1/math/evaluate:
+    post: {responses: {'200': {description: Mathematical result}}}
+  /api/v1/mazes/generate:
+    post: {responses: {'200': {description: Generated maze}}}
