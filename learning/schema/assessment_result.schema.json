@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assessment Result",
+  "type": "object",
+  "required": [
+    "question_id",
+    "correct",
+    "mastery",
+    "accuracy"
+  ],
+  "properties": {
+    "question_id": {
+      "type": "string"
+    },
+    "correct": {
+      "type": "boolean"
+    },
+    "mastery": {
+      "type": "number"
+    },
+    "accuracy": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "retention_before": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "response_time_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "transfer": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "error_category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
