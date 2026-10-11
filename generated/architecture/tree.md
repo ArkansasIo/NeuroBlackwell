@@ -1,0 +1,69 @@
+# NeuroBlackwell Generated Architecture
+
+Seed: 20261010
+
+- mathematics
+  - algebra
+    - polynomial (module/class/types/functions/formula registry entry)
+    - linear (module/class/types/functions/formula registry entry)
+    - logistic (module/class/types/functions/formula registry entry)
+  - calculus
+    - derivatives (module/class/types/functions/formula registry entry)
+    - integration (module/class/types/functions/formula registry entry)
+    - differential_equations (module/class/types/functions/formula registry entry)
+  - probability
+    - distributions (module/class/types/functions/formula registry entry)
+    - statistics (module/class/types/functions/formula registry entry)
+    - information_theory (module/class/types/functions/formula registry entry)
+  - linear_algebra
+    - vectors (module/class/types/functions/formula registry entry)
+    - matrices (module/class/types/functions/formula registry entry)
+    - conditioning (module/class/types/functions/formula registry entry)
+  - geometry
+    - 2d (module/class/types/functions/formula registry entry)
+    - 3d (module/class/types/functions/formula registry entry)
+    - higher_dimensions (module/class/types/functions/formula registry entry)
+  - graph_theory
+    - graphs (module/class/types/functions/formula registry entry)
+    - laplacians (module/class/types/functions/formula registry entry)
+    - network_topology (module/class/types/functions/formula registry entry)
+  - optimization
+    - gradient_descent (module/class/types/functions/formula registry entry)
+    - sensitivity (module/class/types/functions/formula registry entry)
+    - search (module/class/types/functions/formula registry entry)
+  - discrete_math
+    - parity (module/class/types/functions/formula registry entry)
+    - combinatorics (module/class/types/functions/formula registry entry)
+    - logic (module/class/types/functions/formula registry entry)
+- neural_computing
+  - neurons
+    - lif (module/class/types/functions/formula registry entry)
+    - conductance_models (module/class/types/functions/formula registry entry)
+    - bursting (module/class/types/functions/formula registry entry)
+  - synapses
+    - stdp (module/class/types/functions/formula registry entry)
+    - short_term_plasticity (module/class/types/functions/formula registry entry)
+    - decay (module/class/types/functions/formula registry entry)
+  - networks
+    - connectivity (module/class/types/functions/formula registry entry)
+    - population_dynamics (module/class/types/functions/formula registry entry)
+    - oscillations (module/class/types/functions/formula registry entry)
+  - learning
+    - supervised (module/class/types/functions/formula registry entry)
+    - reinforcement (module/class/types/functions/formula registry entry)
+    - temporal (module/class/types/functions/formula registry entry)
+- research_platform
+  - experiments
+    - maze (module/class/types/functions/formula registry entry)
+    - odd_even (module/class/types/functions/formula registry entry)
+    - arithmetic (module/class/types/functions/formula registry entry)
+  - data
+    - datasets (module/class/types/functions/formula registry entry)
+    - metrics (module/class/types/functions/formula registry entry)
+    - provenance (module/class/types/functions/formula registry entry)
+  - integrations
+    - wolfram_alpha (module/class/types/functions/formula registry entry)
+    - cortical_labs (module/class/types/functions/formula registry entry)
+    - brian2 (module/class/types/functions/formula registry entry)
+
+Generated names are scaffolding; each implementation needs tests and scientific provenance.
