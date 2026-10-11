@@ -1,0 +1,18 @@
+{
+  "dataset_id": "NB-BRAIN-CELL-CLASSES-001",
+  "kind": "research_taxonomy_starter",
+  "is_experimental_data": false,
+  "records": [
+    {"id":"EXC-PYR","label":"excitatory pyramidal-like neuron","role":"glutamatergic excitation","model_status":"conceptual class; subtype-specific parameters required"},
+    {"id":"INH-PVALB","label":"parvalbumin-associated inhibitory interneuron class","role":"fast inhibitory signaling in many circuits","model_status":"conceptual class; subtype-specific parameters required"},
+    {"id":"INH-SST","label":"somatostatin-associated inhibitory interneuron class","role":"inhibitory circuit modulation","model_status":"conceptual class; subtype-specific parameters required"},
+    {"id":"ASTROCYTE","label":"astrocyte","role":"homeostasis and modulation of neural environment","model_status":"not a neuron; optional future glial module"},
+    {"id":"MICROGLIA","label":"microglia","role":"immune surveillance and context-dependent synapse interactions","model_status":"not a neuron; optional future glial module"},
+    {"id":"OLIGODENDROCYTE","label":"oligodendrocyte","role":"myelin formation and modulation of axonal conduction","model_status":"not a neuron; optional future tissue module"}
+  ],
+  "provenance": [
+    "https://www.nih.gov/brain/research/tools-technologies-brain-cells-circuits/brain-initiative-cell-atlas-network",
+    "https://www.nature.com/articles/s41583-024-00888-w"
+  ],
+  "warning": "This is a taxonomy scaffold, not a complete census or measured dataset of human cells."
+}
