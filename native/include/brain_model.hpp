@@ -1,4 +1,5 @@
 #pragma once
+#include "learning_rules.hpp"
 #include "neural_types.hpp"
 #include "neuron_population.hpp"
 #include "synapse_network.hpp"
@@ -33,6 +34,9 @@ public:
     void connect(std::uint64_t source, std::uint64_t target, double weight, double delay_ms = 1.0);
     void step(double dt_ms);
     void stimulate(std::uint64_t neuron_id, double current);
+    void set_plasticity_enabled(bool enabled) noexcept { plasticity_enabled_ = enabled; }
+    [[nodiscard]] bool plasticity_enabled() const noexcept { return plasticity_enabled_; }
+    void set_stdp_parameters(const STDPParameters& parameters);
     const std::vector<Neuron>& neurons() const noexcept { return neurons_; }
     const std::vector<Synapse>& synapses() const noexcept { return network_.edges(); }
     double time_ms() const noexcept { return time_ms_; }
@@ -42,7 +46,10 @@ private:
     std::vector<Neuron> neurons_;
     SynapseNetwork network_;
     std::vector<double> input_;
+    std::vector<double> last_spike_ms_;
     std::vector<PendingSynapticEvent> pending_events_;
+    STDPParameters stdp_parameters_{};
+    bool plasticity_enabled_{false};
     double time_ms_{};
     std::uint64_t seed_{};
 };
