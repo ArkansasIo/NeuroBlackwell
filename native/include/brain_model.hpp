@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <vector>
+
 namespace nb {
 struct Neuron {
     std::uint64_t id{};
@@ -14,6 +15,13 @@ struct Neuron {
     double leak_tau_ms{20.0};
     bool spiked{false};
 };
+
+struct PendingSynapticEvent {
+    double delivery_time_ms{};
+    std::uint64_t target{};
+    double weight{};
+};
+
 class BrainModel {
 public:
     explicit BrainModel(std::uint64_t seed = 1);
@@ -25,11 +33,14 @@ public:
     const std::vector<Neuron>& neurons() const noexcept { return neurons_; }
     const std::vector<Synapse>& synapses() const noexcept { return network_.edges(); }
     double time_ms() const noexcept { return time_ms_; }
+    std::size_t pending_event_count() const noexcept { return pending_events_.size(); }
+
 private:
     std::vector<Neuron> neurons_;
     SynapseNetwork network_;
     std::vector<double> input_;
+    std::vector<PendingSynapticEvent> pending_events_;
     double time_ms_{};
     std::uint64_t seed_{};
 };
-}
+} // namespace nb
