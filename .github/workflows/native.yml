@@ -11,3 +11,7 @@ jobs:
         run: cmake --build native/build --parallel
       - name: Test
         run: ctest --test-dir native/build --output-on-failure
+      - name: Validate exported scene JSON
+        run: |
+          native/build/shb_export_scene native/build/test_scene.json
+          python -c "import json; p=json.load(open('native/build/test_scene.json', encoding='utf-8')); assert len(p['neurons']) == 96; assert len(p['connections']) == 192; assert p['status'] == 'synthetic_native_simulation'; assert all('region_id' in n and 'membrane_mv' in n and 'spiked' in n for n in p['neurons']); print('scene JSON validated:', len(p['neurons']), 'neurons,', len(p['connections']), 'connections')"
