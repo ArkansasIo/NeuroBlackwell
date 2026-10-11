@@ -10,3 +10,6 @@ A research visualization layer for a virtual human-brain model. Geometry and con
 - Provenance metadata for every external dataset.
 
 The default demo uses synthetic geometry and synthetic neurons. It is not a human MRI reconstruction.
+
+## Data workbook
+Run `python tools/generate_neuron_workbook.py` after installing `openpyxl` to generate `brain3d/data/NeuroBlackwell_Neuron_Data.xlsx` with neuron, synapse, region, and provenance worksheets.
