@@ -21,6 +21,9 @@ add_library(neuroblackwell_brain ALIAS synthetic_human_brain)
 add_executable(shb_brain_demo src/main.cpp)
 target_link_libraries(shb_brain_demo PRIVATE synthetic_human_brain)
 
+add_executable(shb_export_scene src/export_scene.cpp)
+target_link_libraries(shb_export_scene PRIVATE synthetic_human_brain)
+
 enable_testing()
 add_executable(shb_brain_test tests/test_brain.cpp)
 target_link_libraries(shb_brain_test PRIVATE synthetic_human_brain)
