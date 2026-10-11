@@ -10,13 +10,20 @@ ctest --test-dir build/native --output-on-failure
 Requires CMake 3.20+, a C17 compiler, and a C++20 compiler.
 
 ## Modules
-- `brain_model.*`: neuron state and simulation step.
-- `synapse_network.*`: directed connections.
-- `learning_rules.*`: illustrative STDP update curve.
+- `brain_model.*`: neuron state, simulation stepping, event delivery, and population instantiation.
+- `synapse_network.*`: directed connections with weights and delay metadata.
+- `learning_rules.*`: illustrative STDP update curve (not yet coupled to spike history in the stepper).
 - `brain_c_api.*`: stable C ABI for external front ends.
 - `neural_address.*`: fixed-width address utility for 128/256/512/1024-bit IDs.
 - `simulation.*`: deterministic simulation clock configuration.
-- `brain_regions.*`: region registry.
-- `neuron_population.*`: reproducible synthetic population coordinates.
+- `brain_regions.*`: validated region registry.
+- `neuron_population.*`: deterministic synthetic population coordinates and region labels.
 
-This is a small research simulator, not a biologically complete brain. Synthetic atlas coordinates are not MRI data. The current stepper is simplified and does not model conduction delays or full Hodgkin–Huxley dynamics.
+## Event timing and limitations
+When a neuron spikes, each outgoing synapse schedules a weighted event at
+`simulation_time + delay_ms`. Events due by the end of a simulation step are
+applied during that integration interval, so event timing is quantized to the
+configured timestep. The current neuron integrator is a simplified leaky
+integrate-and-fire model; it is not a conductance-based or Hodgkin–Huxley model.
+STDP helper equations are available but are not yet coupled to recorded spike
+trains. The synthetic atlas is illustrative and is not derived from MRI data.
