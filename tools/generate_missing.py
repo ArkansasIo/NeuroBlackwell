@@ -157,7 +157,7 @@ def render_tree_markdown(tree):
             walk(child, depth+1)
     walk(tree)
     lines += ["", "Each branch is a scaffold entry. Implementations and scientific claims require tests and provenance."]
-    return "\\n".join(lines) + "\\n"
+    return "\n".join(lines) + "\n"
 
 def main():
     ap=argparse.ArgumentParser()
