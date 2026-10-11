@@ -1,0 +1,9 @@
+record_id,model,parameter,value,unit,status,source_or_rationale
+NB-SYN-001,LIF,resting_potential,-65,mV,synthetic_example,illustrative software test value not a human universal
+NB-SYN-002,LIF,reset_potential,-65,mV,synthetic_example,illustrative software test value not a human universal
+NB-SYN-003,LIF,threshold_potential,-50,mV,synthetic_example,illustrative software test value not a human universal
+NB-SYN-004,LIF,membrane_time_constant,20,ms,synthetic_example,illustrative software test value not a human universal
+NB-SYN-005,LIF,refractory_period,2,ms,synthetic_example,illustrative software test value not a human universal
+NB-SYN-006,synapse,excitatory_weight,0.1,arbitrary_units,synthetic_example,dimensionless simulator test parameter
+NB-SYN-007,synapse,inhibitory_weight,-0.1,arbitrary_units,synthetic_example,dimensionless simulator test parameter
+NB-SYN-008,synapse,synaptic_time_constant,5,ms,synthetic_example,illustrative software test value not a human universal
