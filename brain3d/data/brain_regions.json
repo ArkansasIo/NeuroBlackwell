@@ -1,0 +1,15 @@
+{
+  "dataset_id": "NB-BRAIN-REGIONS-001",
+  "status": "reference_scaffold",
+  "regions": [
+    {"id":"cortex.left","name":"Left cerebral cortex","parent":null},
+    {"id":"cortex.right","name":"Right cerebral cortex","parent":null},
+    {"id":"corpus_callosum","name":"Corpus callosum","parent":null},
+    {"id":"thalamus","name":"Thalamus","parent":null},
+    {"id":"hippocampus.left","name":"Left hippocampus","parent":null},
+    {"id":"hippocampus.right","name":"Right hippocampus","parent":null},
+    {"id":"basal_ganglia","name":"Basal ganglia","parent":null},
+    {"id":"cerebellum","name":"Cerebellum","parent":null},
+    {"id":"brainstem","name":"Brainstem","parent":null}
+  ]
+}
