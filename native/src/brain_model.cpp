@@ -2,10 +2,9 @@
 #include <algorithm>
 #include <cmath>
 #include <stdexcept>
-
 namespace nb {
 BrainModel::BrainModel(std::uint64_t seed): seed_(seed) {}
-void BrainModel::reserve(std::size_t n){ neurons_.reserve(n); input_.reserve(n); }
+void BrainModel::reserve(std::size_t n){ neurons_.reserve(n); input_.reserve(n); network_.reserve(n); }
 std::uint64_t BrainModel::add_neuron(Vec3 p, NeuronType type){
     auto id=static_cast<std::uint64_t>(neurons_.size());
     neurons_.push_back(Neuron{id,p,type});
@@ -14,8 +13,7 @@ std::uint64_t BrainModel::add_neuron(Vec3 p, NeuronType type){
 }
 void BrainModel::connect(std::uint64_t s,std::uint64_t t,double w,double d){
     if(s>=neurons_.size()||t>=neurons_.size()) throw std::out_of_range("synapse neuron id");
-    if(!std::isfinite(w)||!std::isfinite(d)||d<0.0) throw std::invalid_argument("invalid synapse");
-    synapses_.push_back(Synapse{s,t,w,d});
+    network_.connect(s,t,w,d);
 }
 void BrainModel::stimulate(std::uint64_t id,double current){
     if(id>=input_.size()) throw std::out_of_range("stimulus neuron id");
@@ -32,7 +30,7 @@ void BrainModel::step(double dt){
         n.spiked=n.membrane_mv>=n.threshold_mv;
         if(n.spiked) n.membrane_mv=-70.0;
     }
-    for(const auto &s:synapses_) if(neurons_[s.source].spiked) next_input[s.target]+=s.weight;
+    for(const auto &s:network_.edges()) if(neurons_[s.source].spiked) next_input[s.target]+=s.weight;
     input_.swap(next_input);
     time_ms_+=dt;
 }
