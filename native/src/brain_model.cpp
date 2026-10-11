@@ -119,13 +119,9 @@ void BrainModel::step(double dt_ms) {
             }
         }
         for (const auto& [pair, delta] : weight_deltas) {
-            network_.apply_stdp(pair.first, pair.second, delta);
-            for (const auto& synapse : network_.edges()) {
-                if (synapse.source == pair.first && synapse.target == pair.second) {
-                    // All parallel connections are adjusted together by the network API.
-                    break;
-                }
-            }
+            network_.apply_stdp(pair.first, pair.second, delta,
+                                 stdp_parameters_.minimum_weight,
+                                 stdp_parameters_.maximum_weight);
         }
     }
 
