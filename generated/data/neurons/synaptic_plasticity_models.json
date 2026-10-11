@@ -1,0 +1,23 @@
+{
+  "dataset_id": "NB-SYN-PLASTICITY-001",
+  "status": "model_registry",
+  "models": [
+    {
+      "id": "STDP_PAIR_BASELINE",
+      "name": "pair-based spike-timing-dependent plasticity",
+      "description": "A simplified rule where weight changes depend on pre/post spike timing.",
+      "equation": "delta_w = A_plus*exp(-dt/tau_plus) if dt>0; -A_minus*exp(dt/tau_minus) if dt<0",
+      "assumptions": ["dt is postsynaptic spike time minus presynaptic spike time", "parameters are model-specific", "weight bounds and update schedule must be specified"],
+      "evidence_note": "Simplified model family; not a universal rule for all human synapses."
+    },
+    {
+      "id": "EI_CODEPENDENT_CONCEPT",
+      "name": "co-dependent excitatory/inhibitory plasticity",
+      "description": "Optional model in which local excitatory and inhibitory context influences plasticity.",
+      "equation": null,
+      "implementation_status": "research_specification_only",
+      "source": "https://www.nature.com/articles/s41593-024-01597-4",
+      "evidence_note": "Inspired by a published theoretical framework; needs implementation and validation."
+    }
+  ]
+}
