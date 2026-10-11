@@ -1,0 +1,9 @@
+{
+  "dataset_id":"NB-DEMO-BRAIN-001",
+  "status":"synthetic_demo",
+  "coordinate_system":"normalized_brain_xyz",
+  "coordinate_precision_decimal_places":9,
+  "neurons": [],
+  "connections": [],
+  "note":"Populate with generated C23 demo data; do not interpret as human measurements."
+}
