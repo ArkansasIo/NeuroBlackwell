@@ -1,0 +1,4 @@
+neuron_id,region,hemisphere,cell_type,layer,x_mm,y_mm,z_mm,source,status
+0,cortex,L,excitatory,L2/3,0,0,0,synthetic_demo,synthetic
+1,cortex,L,inhibitory,L2/3,0.15,0.02,0.01,synthetic_demo,synthetic
+2,cortex,R,excitatory,L5,-0.1,0.01,0.02,synthetic_demo,synthetic
