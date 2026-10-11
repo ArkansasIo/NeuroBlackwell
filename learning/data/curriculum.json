@@ -1,0 +1,111 @@
+{
+  "levels": [
+    {
+      "id": "kindergarten",
+      "ordinal": 0,
+      "difficulty": [
+        1,
+        2
+      ],
+      "focus": [
+        "recognition",
+        "counting",
+        "language",
+        "observation"
+      ]
+    },
+    {
+      "id": "elementary",
+      "ordinal": 1,
+      "difficulty": [
+        2,
+        4
+      ],
+      "focus": [
+        "arithmetic",
+        "reading",
+        "classification",
+        "basic_science"
+      ]
+    },
+    {
+      "id": "middle_school",
+      "ordinal": 2,
+      "difficulty": [
+        3,
+        5
+      ],
+      "focus": [
+        "fractions",
+        "pre_algebra",
+        "grammar",
+        "life_science",
+        "civics"
+      ]
+    },
+    {
+      "id": "high_school",
+      "ordinal": 3,
+      "difficulty": [
+        4,
+        7
+      ],
+      "focus": [
+        "algebra",
+        "geometry",
+        "statistics",
+        "biology",
+        "chemistry",
+        "physics",
+        "programming"
+      ]
+    },
+    {
+      "id": "college",
+      "ordinal": 4,
+      "difficulty": [
+        5,
+        8
+      ],
+      "focus": [
+        "calculus",
+        "linear_algebra",
+        "probability",
+        "chemistry",
+        "mechanics",
+        "algorithms",
+        "economics"
+      ]
+    },
+    {
+      "id": "university",
+      "ordinal": 5,
+      "difficulty": [
+        6,
+        9
+      ],
+      "focus": [
+        "advanced_math",
+        "research_methods",
+        "neuroscience",
+        "engineering",
+        "formal_logic"
+      ]
+    },
+    {
+      "id": "graduate_research",
+      "ordinal": 6,
+      "difficulty": [
+        7,
+        10
+      ],
+      "focus": [
+        "proof",
+        "modeling",
+        "experimental_design",
+        "critical_review",
+        "novel_problem_solving"
+      ]
+    }
+  ]
+}
