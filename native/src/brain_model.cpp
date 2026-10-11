@@ -1,7 +1,10 @@
 #include "brain_model.hpp"
 #include <algorithm>
 #include <cmath>
+#include <limits>
+#include <map>
 #include <stdexcept>
+#include <utility>
 
 namespace nb {
 BrainModel::BrainModel(std::uint64_t seed) : seed_(seed) {}
@@ -9,6 +12,7 @@ BrainModel::BrainModel(std::uint64_t seed) : seed_(seed) {}
 void BrainModel::reserve(std::size_t n) {
     neurons_.reserve(n);
     input_.reserve(n);
+    last_spike_ms_.reserve(n);
     network_.reserve(n);
     pending_events_.reserve(n);
 }
@@ -19,6 +23,7 @@ std::uint64_t BrainModel::add_neuron(Vec3 position, NeuronType type, std::uint32
     neuron.region_id = region_id;
     neurons_.push_back(neuron);
     input_.push_back(0.0);
+    last_spike_ms_.push_back(-std::numeric_limits<double>::infinity());
     return id;
 }
 
@@ -50,6 +55,18 @@ void BrainModel::stimulate(std::uint64_t neuron_id, double current) {
     input_[neuron_id] += current;
 }
 
+void BrainModel::set_stdp_parameters(const STDPParameters& parameters) {
+    if (!std::isfinite(parameters.potentiation) || parameters.potentiation < 0.0 ||
+        !std::isfinite(parameters.depression) || parameters.depression < 0.0 ||
+        !std::isfinite(parameters.tau_plus_ms) || parameters.tau_plus_ms <= 0.0 ||
+        !std::isfinite(parameters.tau_minus_ms) || parameters.tau_minus_ms <= 0.0 ||
+        !std::isfinite(parameters.minimum_weight) || !std::isfinite(parameters.maximum_weight) ||
+        parameters.minimum_weight > parameters.maximum_weight) {
+        throw std::invalid_argument("invalid STDP parameters");
+    }
+    stdp_parameters_ = parameters;
+}
+
 void BrainModel::step(double dt_ms) {
     if (!(dt_ms > 0.0) || !std::isfinite(dt_ms)) {
         throw std::invalid_argument("dt must be finite and positive");
@@ -59,8 +76,8 @@ void BrainModel::step(double dt_ms) {
         throw std::overflow_error("brain simulation time overflow");
     }
 
-    // Events are quantized to the simulation step: events due by the end of
-    // this step contribute during this integration interval.
+    // Event times are quantized to this step: events due by its end contribute
+    // during the current integration interval.
     std::vector<PendingSynapticEvent> future_events;
     future_events.reserve(pending_events_.size());
     for (const auto& event : pending_events_) {
@@ -79,6 +96,42 @@ void BrainModel::step(double dt_ms) {
         neuron.spiked = neuron.membrane_mv >= neuron.threshold_mv;
         if (neuron.spiked) {
             neuron.membrane_mv = -70.0;
+        }
+    }
+
+    // Pair-based STDP uses only spike times from earlier steps. The helper's
+    // positive interval means potentiation (post after pre); negative means
+    // depression (pre after post). Plasticity is opt-in and weights are clamped.
+    if (plasticity_enabled_) {
+        std::map<std::pair<std::uint64_t, std::uint64_t>, double> weight_deltas;
+        for (const auto& synapse : network_.edges()) {
+            const bool pre_spiked = neurons_[synapse.source].spiked;
+            const bool post_spiked = neurons_[synapse.target].spiked;
+            double delta = 0.0;
+            if (pre_spiked && std::isfinite(last_spike_ms_[synapse.target])) {
+                delta += stdp_delta(last_spike_ms_[synapse.target] - end_time_ms, stdp_parameters_);
+            }
+            if (post_spiked && std::isfinite(last_spike_ms_[synapse.source])) {
+                delta += stdp_delta(end_time_ms - last_spike_ms_[synapse.source], stdp_parameters_);
+            }
+            if (delta != 0.0) {
+                weight_deltas[{synapse.source, synapse.target}] += delta;
+            }
+        }
+        for (const auto& [pair, delta] : weight_deltas) {
+            network_.apply_stdp(pair.first, pair.second, delta);
+            for (const auto& synapse : network_.edges()) {
+                if (synapse.source == pair.first && synapse.target == pair.second) {
+                    // All parallel connections are adjusted together by the network API.
+                    break;
+                }
+            }
+        }
+    }
+
+    for (std::size_t i = 0; i < neurons_.size(); ++i) {
+        if (neurons_[i].spiked) {
+            last_spike_ms_[i] = end_time_ms;
         }
     }
 
