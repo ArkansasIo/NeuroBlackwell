@@ -1,0 +1,1 @@
+Data files are synthetic starter datasets. They are intentionally small and reproducible. Production expansion should preserve provenance, versioning, source/license metadata, and validation against the JSON schema.
