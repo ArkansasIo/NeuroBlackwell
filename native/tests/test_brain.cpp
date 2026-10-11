@@ -6,8 +6,10 @@
 int main() {
     nb::BrainModel brain(7);
     brain.reserve(2);
-    const auto source = brain.add_neuron({0, 0, 0}, nb::NeuronType::Excitatory);
-    const auto target = brain.add_neuron({1, 0, 0}, nb::NeuronType::Inhibitory);
+    const auto source = brain.add_neuron({0, 0, 0}, nb::NeuronType::Excitatory, 11);
+    const auto target = brain.add_neuron({1, 0, 0}, nb::NeuronType::Inhibitory, 12);
+    assert(brain.neurons()[source].region_id == 11);
+    assert(brain.neurons()[target].region_id == 12);
     brain.connect(source, target, 25.0, 2.0);
 
     brain.stimulate(source, 25.0);
@@ -34,5 +36,17 @@ int main() {
         rejects_invalid_dt = true;
     }
     assert(rejects_invalid_dt);
+
+    nb::BrainModel population_brain(42);
+    const nb::NeuronPopulation population({
+        77, nb::NeuronType::Glial, 4, {10, 20, 30}, {2, 3, 4}
+    });
+    const auto ids = population_brain.add_population(population);
+    assert(ids.size() == 4);
+    assert(ids.front() == 0 && ids.back() == 3);
+    for (const auto id : ids) {
+        assert(population_brain.neurons()[id].region_id == 77);
+        assert(population_brain.neurons()[id].type == nb::NeuronType::Glial);
+    }
     return 0;
 }
