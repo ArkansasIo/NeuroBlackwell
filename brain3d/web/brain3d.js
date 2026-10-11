@@ -15,7 +15,6 @@
   let paused = false;
   let localPulseUntil = 0;
   let selectedNeuron = null;
-  let lastTime = 0;
   const regionColors = ["#55c9ff", "#f3ad5b", "#be8cff", "#6de2b1", "#ff7896", "#d8e6f4"];
 
   function syntheticFallback() {
@@ -93,8 +92,6 @@
       if (!visibleIds.has(edge.source) || !visibleIds.has(edge.target)) continue;
       const a = projected.get(edge.source), b = projected.get(edge.target);
       if (!a || !b) continue;
-      const source = scene.neurons.find(n => n.id === edge.source);
-      const target = scene.neurons.find(n => n.id === edge.target);
       const active = pulse && ((edge.source * 17 + edge.target * 3) % 11 < 3);
       ctx.strokeStyle = active ? "rgba(255,204,107,.8)" : "rgba(81,143,190,.15)";
       ctx.lineWidth = active ? 1.6 : Math.max(0.35, Math.min(1.0, Number(edge.weight) * 0.5));
@@ -123,9 +120,15 @@
   function updateStats(visibleCount) {
     if (!scene) return;
     const active = scene.neurons.filter(n => n.spiked).length;
-    stats.textContent = scene.dataset_id + " · " + visibleCount + "/" + scene.neurons.length +
+    const selected = scene.neurons.find(n => n.id === selectedNeuron);
+    const base = scene.dataset_id + " · " + visibleCount + "/" + scene.neurons.length +
       " neurons · " + scene.connections.length + " connections · " + active +
-      " native spike flags · " + Number(scene.simulation_time_ms ?? 0).toFixed(2) + " ms · " + scene.status;
+      " spike flags · " + Number(scene.simulation_time_ms ?? 0).toFixed(2) + " ms · " + scene.status;
+    stats.textContent = selected
+      ? base + " · selected neuron " + selected.id + " / region " + selected.region_id +
+        " / " + selected.type + " / Vm " + selected.membrane_mv.toFixed(2) + " mV / degree " +
+        scene.connections.filter(e => e.source === selected.id || e.target === selected.id).length
+      : base;
     sceneLabel.textContent = scene.status === "synthetic_native_simulation"
       ? "Loaded native C++ simulation snapshot" : "Synthetic visualization data";
   }
