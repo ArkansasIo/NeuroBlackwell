@@ -1,0 +1,134 @@
+{
+  "subjects": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "domains": [
+        "number_sense",
+        "arithmetic",
+        "algebra",
+        "geometry",
+        "trigonometry",
+        "calculus",
+        "linear_algebra",
+        "discrete_math",
+        "statistics",
+        "probability"
+      ]
+    },
+    {
+      "id": "language",
+      "name": "Language & Literacy",
+      "domains": [
+        "phonics",
+        "reading",
+        "writing",
+        "grammar",
+        "vocabulary",
+        "linguistics",
+        "literature"
+      ]
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "domains": [
+        "biology",
+        "chemistry",
+        "physics",
+        "earth_science",
+        "environmental_science",
+        "astronomy"
+      ]
+    },
+    {
+      "id": "computer_science",
+      "name": "Computer Science",
+      "domains": [
+        "logic",
+        "algorithms",
+        "programming",
+        "data_structures",
+        "systems",
+        "databases",
+        "ai"
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "domains": [
+        "mechanics",
+        "electronics",
+        "thermodynamics",
+        "materials",
+        "controls",
+        "software_engineering"
+      ]
+    },
+    {
+      "id": "social_studies",
+      "name": "Social Studies",
+      "domains": [
+        "history",
+        "geography",
+        "civics",
+        "economics",
+        "anthropology",
+        "sociology"
+      ]
+    },
+    {
+      "id": "psychology",
+      "name": "Psychology",
+      "domains": [
+        "development",
+        "cognition",
+        "learning",
+        "social_psychology",
+        "research_methods"
+      ]
+    },
+    {
+      "id": "philosophy",
+      "name": "Philosophy",
+      "domains": [
+        "logic",
+        "ethics",
+        "epistemology",
+        "philosophy_of_science"
+      ]
+    },
+    {
+      "id": "arts",
+      "name": "Arts",
+      "domains": [
+        "visual_art",
+        "music",
+        "design",
+        "performance",
+        "art_history"
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health & Human Biology",
+      "domains": [
+        "anatomy",
+        "physiology",
+        "nutrition",
+        "public_health"
+      ]
+    },
+    {
+      "id": "interdisciplinary",
+      "name": "Interdisciplinary Reasoning",
+      "domains": [
+        "systems_thinking",
+        "causal_reasoning",
+        "quantitative_reasoning",
+        "research_design"
+      ]
+    }
+  ]
+}
