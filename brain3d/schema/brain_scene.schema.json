@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NeuroBlackwell Brain Scene",
+  "type": "object",
+  "required": ["version", "coordinate_system", "regions", "neurons", "connections"],
+  "properties": {
+    "version": {"type":"string"},
+    "coordinate_system": {"type":"string"},
+    "regions": {"type":"array"},
+    "neurons": {"type":"array"},
+    "connections": {"type":"array"},
+    "provenance": {"type":"array"}
+  }
+}
