@@ -7,7 +7,14 @@
     "calculus/derivatives.py",
     "calculus/integration.py",
     "optimization/gradient_descent.py",
-    "probability/distributions.py"
+    "probability/distributions.py",
+    "calculus/integral_outputs.py"
   ],
-  "status": "generated"
+  "status": "generated",
+  "integral_outputs": {
+    "int_x_0_1": 0.5,
+    "int_x2_0_1": 0.3333333333333333,
+    "int_exp_0_1": 1.718281828459045,
+    "int_sin_0_pi": 2
+  }
 }
