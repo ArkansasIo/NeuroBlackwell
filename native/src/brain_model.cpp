@@ -115,7 +115,7 @@ void BrainModel::step(double dt_ms) {
                 delta += stdp_delta(end_time_ms - last_spike_ms_[synapse.source], stdp_parameters_);
             }
             if (delta != 0.0) {
-                weight_deltas[{synapse.source, synapse.target}] += delta;
+                weight_deltas[{synapse.source, synapse.target}] = delta;
             }
         }
         for (const auto& [pair, delta] : weight_deltas) {
