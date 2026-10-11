@@ -1,0 +1,188 @@
+{
+  "questions": [
+    {
+      "id": "K-MATH-001",
+      "level": "kindergarten",
+      "subject": "mathematics",
+      "domain": "number_sense",
+      "skill": "counting",
+      "difficulty": 1,
+      "cognitive_operation": "recognition",
+      "prerequisite_skills": [],
+      "prompt": "How many apples are in a group of three apples?",
+      "answer": 3,
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "counting"
+      ]
+    },
+    {
+      "id": "K-LANG-001",
+      "level": "kindergarten",
+      "subject": "language",
+      "domain": "reading",
+      "skill": "letter_recognition",
+      "difficulty": 1,
+      "cognitive_operation": "recognition",
+      "prerequisite_skills": [],
+      "prompt": "Which letter comes first in the word CAT?",
+      "answer": "C",
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "letters"
+      ]
+    },
+    {
+      "id": "E-MATH-001",
+      "level": "elementary",
+      "subject": "mathematics",
+      "domain": "arithmetic",
+      "skill": "addition",
+      "difficulty": 2,
+      "cognitive_operation": "calculation",
+      "prerequisite_skills": [
+        "counting"
+      ],
+      "prompt": "What is 27 + 15?",
+      "answer": 42,
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "addition"
+      ]
+    },
+    {
+      "id": "E-SCI-001",
+      "level": "elementary",
+      "subject": "science",
+      "domain": "biology",
+      "skill": "classification",
+      "difficulty": 2,
+      "cognitive_operation": "classification",
+      "prerequisite_skills": [],
+      "prompt": "Which group does a frog belong to: mammal, bird, or amphibian?",
+      "answer": "amphibian",
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "animals"
+      ]
+    },
+    {
+      "id": "M-MATH-001",
+      "level": "middle_school",
+      "subject": "mathematics",
+      "domain": "pre_algebra",
+      "skill": "linear_equations",
+      "difficulty": 4,
+      "cognitive_operation": "symbolic_reasoning",
+      "prerequisite_skills": [
+        "addition"
+      ],
+      "prompt": "Solve 3x + 4 = 19.",
+      "answer": 5,
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "algebra"
+      ]
+    },
+    {
+      "id": "H-PHYS-001",
+      "level": "high_school",
+      "subject": "science",
+      "domain": "physics",
+      "skill": "newtons_second_law",
+      "difficulty": 6,
+      "cognitive_operation": "quantitative_reasoning",
+      "prerequisite_skills": [
+        "arithmetic"
+      ],
+      "prompt": "What net force acts on a 2 kg object accelerating at 3 m/s^2?",
+      "answer": 6,
+      "unit": "N",
+      "provenance": "synthetic",
+      "tags": [
+        "physics"
+      ]
+    },
+    {
+      "id": "C-MATH-001",
+      "level": "college",
+      "subject": "mathematics",
+      "domain": "calculus",
+      "skill": "derivatives",
+      "difficulty": 7,
+      "cognitive_operation": "symbolic_reasoning",
+      "prerequisite_skills": [
+        "algebra"
+      ],
+      "prompt": "What is the derivative of x^3?",
+      "answer": "3x^2",
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "calculus"
+      ]
+    },
+    {
+      "id": "U-CS-001",
+      "level": "university",
+      "subject": "computer_science",
+      "domain": "algorithms",
+      "skill": "complexity",
+      "difficulty": 8,
+      "cognitive_operation": "analysis",
+      "prerequisite_skills": [
+        "algorithms"
+      ],
+      "prompt": "What is the asymptotic time complexity of binary search on a sorted array?",
+      "answer": "O(log n)",
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "algorithms"
+      ]
+    },
+    {
+      "id": "U-NEURO-001",
+      "level": "university",
+      "subject": "science",
+      "domain": "neuroscience",
+      "skill": "membrane_potential",
+      "difficulty": 8,
+      "cognitive_operation": "mechanistic_reasoning",
+      "prerequisite_skills": [
+        "biology"
+      ],
+      "prompt": "Which ion is primarily responsible for rapid depolarization in a typical neuronal action potential?",
+      "answer": "Na+",
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "neuroscience"
+      ]
+    },
+    {
+      "id": "G-RESEARCH-001",
+      "level": "graduate_research",
+      "subject": "interdisciplinary",
+      "domain": "research_design",
+      "skill": "causal_inference",
+      "difficulty": 9,
+      "cognitive_operation": "experimental_design",
+      "prerequisite_skills": [
+        "statistics"
+      ],
+      "prompt": "Which design most directly supports causal inference when random assignment is feasible?",
+      "answer": "randomized controlled trial",
+      "unit": null,
+      "provenance": "synthetic",
+      "tags": [
+        "causality"
+      ]
+    }
+  ]
+}
