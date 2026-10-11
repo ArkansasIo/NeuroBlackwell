@@ -13,11 +13,24 @@ void BrainModel::reserve(std::size_t n) {
     pending_events_.reserve(n);
 }
 
-std::uint64_t BrainModel::add_neuron(Vec3 position, NeuronType type) {
+std::uint64_t BrainModel::add_neuron(Vec3 position, NeuronType type, std::uint32_t region_id) {
     const auto id = static_cast<std::uint64_t>(neurons_.size());
-    neurons_.push_back(Neuron{id, position, type});
+    Neuron neuron{id, position, type};
+    neuron.region_id = region_id;
+    neurons_.push_back(neuron);
     input_.push_back(0.0);
     return id;
+}
+
+std::vector<std::uint64_t> BrainModel::add_population(const NeuronPopulation& population) {
+    const auto first_id = static_cast<std::uint64_t>(neurons_.size());
+    const auto members = population.generate(first_id);
+    std::vector<std::uint64_t> ids;
+    ids.reserve(members.size());
+    for (const auto& member : members) {
+        ids.push_back(add_neuron(member.position, member.type, member.region_id));
+    }
+    return ids;
 }
 
 void BrainModel::connect(std::uint64_t source, std::uint64_t target, double weight, double delay_ms) {
