@@ -12,6 +12,8 @@ add_library(synthetic_human_brain STATIC
     src/brain_c_api.cpp
     src/neural_address.c
     src/simulation.cpp
+    src/brain_regions.cpp
+    src/neuron_population.cpp
 )
 target_include_directories(synthetic_human_brain PUBLIC include)
 add_library(neuroblackwell_brain ALIAS synthetic_human_brain)
@@ -39,3 +41,7 @@ add_test(NAME shb_neural_address_test COMMAND shb_neural_address_test)
 add_executable(shb_simulation_test tests/test_simulation.cpp)
 target_link_libraries(shb_simulation_test PRIVATE synthetic_human_brain)
 add_test(NAME shb_simulation_test COMMAND shb_simulation_test)
+
+add_executable(shb_brain_regions_test tests/test_brain_regions.cpp)
+target_link_libraries(shb_brain_regions_test PRIVATE synthetic_human_brain)
+add_test(NAME shb_brain_regions_test COMMAND shb_brain_regions_test)
