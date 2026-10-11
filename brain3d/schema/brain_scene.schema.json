@@ -5,10 +5,32 @@
   "required": ["version", "coordinate_system", "regions", "neurons", "connections"],
   "properties": {
     "version": {"type":"string"},
+    "dataset_id": {"type":"string"},
+    "status": {"type":"string"},
     "coordinate_system": {"type":"string"},
-    "regions": {"type":"array"},
-    "neurons": {"type":"array"},
-    "connections": {"type":"array"},
-    "provenance": {"type":"array"}
+    "simulation_time_ms": {"type":"number", "minimum":0},
+    "regions": {
+      "type":"array",
+      "items":{"type":"object","required":["id","name"],"properties":{
+        "id":{"type":"integer"},"name":{"type":"string"},"center":{"type":"array","items":{"type":"number"},"minItems":3,"maxItems":3}
+      }}
+    },
+    "neurons": {
+      "type":"array",
+      "items":{"type":"object","required":["id","x","y","z"],"properties":{
+        "id":{"type":"integer","minimum":0},"region_id":{"type":"integer","minimum":0},
+        "type":{"type":"string","enum":["excitatory","inhibitory","glial","unknown"]},
+        "x":{"type":"number"},"y":{"type":"number"},"z":{"type":"number"},
+        "membrane_mv":{"type":"number"},"spiked":{"type":"boolean"}
+      }}
+    },
+    "connections": {
+      "type":"array",
+      "items":{"type":"object","required":["source","target","weight"],"properties":{
+        "source":{"type":"integer","minimum":0},"target":{"type":"integer","minimum":0},
+        "weight":{"type":"number"},"delay_ms":{"type":"number","minimum":0}
+      }}
+    },
+    "provenance": {"type":"array","items":{"type":"object"}}
   }
 }
