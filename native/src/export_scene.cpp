@@ -39,10 +39,10 @@ int main(int argc, char** argv) {
         brain.connect(i, skip, 0.18 + 0.03 * static_cast<double>(i % 3), 2.0);
     }
 
-    for (std::uint64_t i = 0; i < neuron_count; i += 12) {
-        brain.stimulate(i, 25.0);
-    }
     for (int step = 0; step < 8; ++step) {
+        for (std::uint64_t i = 0; i < neuron_count; i += 12) {
+            brain.stimulate(i, 25.0);
+        }
         brain.step(1.0);
     }
 
