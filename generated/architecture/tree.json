@@ -1,0 +1,1197 @@
+{
+  "name": "NeuroBlackwell",
+  "seed": 20261010,
+  "children": [
+    {
+      "name": "mathematics",
+      "kind": "domain",
+      "children": [
+        {
+          "name": "algebra",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "polynomial",
+              "kind": "branch",
+              "module": "polynomial.py",
+              "class": "Polynomial",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.algebra.polynomial"
+              ]
+            },
+            {
+              "name": "linear",
+              "kind": "branch",
+              "module": "linear.py",
+              "class": "Linear",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.algebra.linear"
+              ]
+            },
+            {
+              "name": "logistic",
+              "kind": "branch",
+              "module": "logistic.py",
+              "class": "Logistic",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.algebra.logistic"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "calculus",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "derivatives",
+              "kind": "branch",
+              "module": "derivatives.py",
+              "class": "Derivatives",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.calculus.derivatives"
+              ]
+            },
+            {
+              "name": "integration",
+              "kind": "branch",
+              "module": "integration.py",
+              "class": "Integration",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.calculus.integration"
+              ]
+            },
+            {
+              "name": "differential_equations",
+              "kind": "branch",
+              "module": "differential_equations.py",
+              "class": "DifferentialEquations",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.calculus.differential_equations"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "probability",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "distributions",
+              "kind": "branch",
+              "module": "distributions.py",
+              "class": "Distributions",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.probability.distributions"
+              ]
+            },
+            {
+              "name": "statistics",
+              "kind": "branch",
+              "module": "statistics.py",
+              "class": "Statistics",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.probability.statistics"
+              ]
+            },
+            {
+              "name": "information_theory",
+              "kind": "branch",
+              "module": "information_theory.py",
+              "class": "InformationTheory",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.probability.information_theory"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "linear_algebra",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "vectors",
+              "kind": "branch",
+              "module": "vectors.py",
+              "class": "Vectors",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.linear_algebra.vectors"
+              ]
+            },
+            {
+              "name": "matrices",
+              "kind": "branch",
+              "module": "matrices.py",
+              "class": "Matrices",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.linear_algebra.matrices"
+              ]
+            },
+            {
+              "name": "conditioning",
+              "kind": "branch",
+              "module": "conditioning.py",
+              "class": "Conditioning",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.linear_algebra.conditioning"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "geometry",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "2d",
+              "kind": "branch",
+              "module": "2d.py",
+              "class": "2d",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.geometry.2d"
+              ]
+            },
+            {
+              "name": "3d",
+              "kind": "branch",
+              "module": "3d.py",
+              "class": "3d",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.geometry.3d"
+              ]
+            },
+            {
+              "name": "higher_dimensions",
+              "kind": "branch",
+              "module": "higher_dimensions.py",
+              "class": "HigherDimensions",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.geometry.higher_dimensions"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "graph_theory",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "graphs",
+              "kind": "branch",
+              "module": "graphs.py",
+              "class": "Graphs",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.graph_theory.graphs"
+              ]
+            },
+            {
+              "name": "laplacians",
+              "kind": "branch",
+              "module": "laplacians.py",
+              "class": "Laplacians",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.graph_theory.laplacians"
+              ]
+            },
+            {
+              "name": "network_topology",
+              "kind": "branch",
+              "module": "network_topology.py",
+              "class": "NetworkTopology",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.graph_theory.network_topology"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "optimization",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "gradient_descent",
+              "kind": "branch",
+              "module": "gradient_descent.py",
+              "class": "GradientDescent",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.optimization.gradient_descent"
+              ]
+            },
+            {
+              "name": "sensitivity",
+              "kind": "branch",
+              "module": "sensitivity.py",
+              "class": "Sensitivity",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.optimization.sensitivity"
+              ]
+            },
+            {
+              "name": "search",
+              "kind": "branch",
+              "module": "search.py",
+              "class": "Search",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.optimization.search"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "discrete_math",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "parity",
+              "kind": "branch",
+              "module": "parity.py",
+              "class": "Parity",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.discrete_math.parity"
+              ]
+            },
+            {
+              "name": "combinatorics",
+              "kind": "branch",
+              "module": "combinatorics.py",
+              "class": "Combinatorics",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.discrete_math.combinatorics"
+              ]
+            },
+            {
+              "name": "logic",
+              "kind": "branch",
+              "module": "logic.py",
+              "class": "Logic",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "mathematics.discrete_math.logic"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "neural_computing",
+      "kind": "domain",
+      "children": [
+        {
+          "name": "neurons",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "lif",
+              "kind": "branch",
+              "module": "lif.py",
+              "class": "Lif",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.neurons.lif"
+              ]
+            },
+            {
+              "name": "conductance_models",
+              "kind": "branch",
+              "module": "conductance_models.py",
+              "class": "ConductanceModels",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.neurons.conductance_models"
+              ]
+            },
+            {
+              "name": "bursting",
+              "kind": "branch",
+              "module": "bursting.py",
+              "class": "Bursting",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.neurons.bursting"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "synapses",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "stdp",
+              "kind": "branch",
+              "module": "stdp.py",
+              "class": "Stdp",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.synapses.stdp"
+              ]
+            },
+            {
+              "name": "short_term_plasticity",
+              "kind": "branch",
+              "module": "short_term_plasticity.py",
+              "class": "ShortTermPlasticity",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.synapses.short_term_plasticity"
+              ]
+            },
+            {
+              "name": "decay",
+              "kind": "branch",
+              "module": "decay.py",
+              "class": "Decay",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.synapses.decay"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "networks",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "connectivity",
+              "kind": "branch",
+              "module": "connectivity.py",
+              "class": "Connectivity",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.networks.connectivity"
+              ]
+            },
+            {
+              "name": "population_dynamics",
+              "kind": "branch",
+              "module": "population_dynamics.py",
+              "class": "PopulationDynamics",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.networks.population_dynamics"
+              ]
+            },
+            {
+              "name": "oscillations",
+              "kind": "branch",
+              "module": "oscillations.py",
+              "class": "Oscillations",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.networks.oscillations"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "learning",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "supervised",
+              "kind": "branch",
+              "module": "supervised.py",
+              "class": "Supervised",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.learning.supervised"
+              ]
+            },
+            {
+              "name": "reinforcement",
+              "kind": "branch",
+              "module": "reinforcement.py",
+              "class": "Reinforcement",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.learning.reinforcement"
+              ]
+            },
+            {
+              "name": "temporal",
+              "kind": "branch",
+              "module": "temporal.py",
+              "class": "Temporal",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "neural_computing.learning.temporal"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "research_platform",
+      "kind": "domain",
+      "children": [
+        {
+          "name": "experiments",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "maze",
+              "kind": "branch",
+              "module": "maze.py",
+              "class": "Maze",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.experiments.maze"
+              ]
+            },
+            {
+              "name": "odd_even",
+              "kind": "branch",
+              "module": "odd_even.py",
+              "class": "OddEven",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.experiments.odd_even"
+              ]
+            },
+            {
+              "name": "arithmetic",
+              "kind": "branch",
+              "module": "arithmetic.py",
+              "class": "Arithmetic",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.experiments.arithmetic"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "data",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "datasets",
+              "kind": "branch",
+              "module": "datasets.py",
+              "class": "Datasets",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.data.datasets"
+              ]
+            },
+            {
+              "name": "metrics",
+              "kind": "branch",
+              "module": "metrics.py",
+              "class": "Metrics",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.data.metrics"
+              ]
+            },
+            {
+              "name": "provenance",
+              "kind": "branch",
+              "module": "provenance.py",
+              "class": "Provenance",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.data.provenance"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "integrations",
+          "kind": "subtree",
+          "children": [
+            {
+              "name": "wolfram_alpha",
+              "kind": "branch",
+              "module": "wolfram_alpha.py",
+              "class": "WolframAlpha",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.integrations.wolfram_alpha"
+              ]
+            },
+            {
+              "name": "cortical_labs",
+              "kind": "branch",
+              "module": "cortical_labs.py",
+              "class": "CorticalLabs",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.integrations.cortical_labs"
+              ]
+            },
+            {
+              "name": "brian2",
+              "kind": "branch",
+              "module": "brian2.py",
+              "class": "Brian2",
+              "structures": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "types": [
+                "Config",
+                "Input",
+                "Result"
+              ],
+              "functions": [
+                "configure",
+                "run",
+                "validate"
+              ],
+              "formula_ids": [
+                "research_platform.integrations.brian2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "note": "Generated architecture scaffold; entries do not imply all modules are implemented or scientifically validated."
+  }
+}
