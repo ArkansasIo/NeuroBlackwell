@@ -12,7 +12,7 @@ Requires CMake 3.20+, a C17 compiler, and a C++20 compiler.
 ## Modules
 - `brain_model.*`: neuron state, simulation stepping, event delivery, and population instantiation.
 - `synapse_network.*`: directed connections with weights and delay metadata.
-- `learning_rules.*`: illustrative STDP update curve (not yet coupled to spike history in the stepper).
+- `learning_rules.*`: pair-based STDP update curve, optionally coupled to observed spike history.
 - `brain_c_api.*`: stable C ABI for external front ends.
 - `neural_address.*`: fixed-width address utility for 128/256/512/1024-bit IDs.
 - `simulation.*`: deterministic simulation clock configuration.
@@ -25,5 +25,8 @@ When a neuron spikes, each outgoing synapse schedules a weighted event at
 applied during that integration interval, so event timing is quantized to the
 configured timestep. The current neuron integrator is a simplified leaky
 integrate-and-fire model; it is not a conductance-based or Hodgkin–Huxley model.
-STDP helper equations are available but are not yet coupled to recorded spike
-trains. The synthetic atlas is illustrative and is not derived from MRI data.
+Pair-based STDP can be enabled with `BrainModel::set_plasticity_enabled(true)`;
+updates use prior-step spike timestamps and clamp weights to configured limits via
+`set_stdp_parameters`. Plasticity is disabled by default. This is a simplified
+learning rule, not a validated model of biological synaptic plasticity. The
+synthetic atlas is illustrative and is not derived from MRI data.
