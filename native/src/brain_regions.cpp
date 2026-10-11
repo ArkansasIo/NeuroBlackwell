@@ -1,6 +1,7 @@
 #include "brain_regions.hpp"
 #include <algorithm>
 #include <stdexcept>
+#include <utility>
 namespace nb {
 void BrainRegionRegistry::add(BrainRegion region) {
     if (region.name.empty()) throw std::invalid_argument("region name must not be empty");
