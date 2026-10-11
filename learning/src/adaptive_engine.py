@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from .mastery import MasteryModel
-from .memory import MemoryModel
+from .memory_model import MemoryModel
 @dataclass
 class AssessmentEngine:
     questions:list[dict]; mastery:MasteryModel|None=None; memory:MemoryModel|None=None
