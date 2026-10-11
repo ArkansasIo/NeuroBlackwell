@@ -1,13 +1,25 @@
 cmake_minimum_required(VERSION 3.20)
-project(neuroblackwell_native LANGUAGES C CXX)
+project(synthetic_human_brain_native LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(neuroblackwell_brain STATIC src/brain_model.cpp)
-target_include_directories(neuroblackwell_brain PUBLIC include)
-add_executable(nb_brain_demo src/main.cpp)
-target_link_libraries(nb_brain_demo PRIVATE neuroblackwell_brain)
+add_library(synthetic_human_brain STATIC
+    src/brain_model.cpp
+    src/synapse_network.cpp
+    src/learning_rules.cpp
+    src/brain_c_api.cpp
+)
+target_include_directories(synthetic_human_brain PUBLIC include)
+add_library(neuroblackwell_brain ALIAS synthetic_human_brain)
+add_executable(shb_brain_demo src/main.cpp)
+target_link_libraries(shb_brain_demo PRIVATE synthetic_human_brain)
 enable_testing()
-add_executable(nb_brain_test tests/test_brain.cpp)
-target_link_libraries(nb_brain_test PRIVATE neuroblackwell_brain)
-add_test(NAME nb_brain_test COMMAND nb_brain_test)
+add_executable(shb_brain_test tests/test_brain.cpp)
+target_link_libraries(shb_brain_test PRIVATE synthetic_human_brain)
+add_test(NAME shb_brain_test COMMAND shb_brain_test)
+add_executable(shb_learning_rules_test tests/test_learning_rules.cpp)
+target_link_libraries(shb_learning_rules_test PRIVATE synthetic_human_brain)
+add_test(NAME shb_learning_rules_test COMMAND shb_learning_rules_test)
+add_executable(shb_c_api_test tests/test_c_api.cpp)
+target_link_libraries(shb_c_api_test PRIVATE synthetic_human_brain)
+add_test(NAME shb_c_api_test COMMAND shb_c_api_test)
