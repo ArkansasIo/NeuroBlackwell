@@ -17,9 +17,9 @@ This repository contains educational and computational models. Simulated results
 - MySQL/PHP research toolchain and REST/WebSocket API
 - Integration references for Cortical Labs, Brian2, NEST, NEURON, Nengo, Norse, SpikingJelly, snnTorch, and BindsNET
 
-## Structure
+## Structure and design
 
-See [docs/REPOSITORY_LAYOUT.md](docs/REPOSITORY_LAYOUT.md) for the full source-tree guide and [learning/README.md](learning/README.md) for the adaptive learning subsystem. See [research/synthetic_human_brain_program_notes.md](research/synthetic_human_brain_program_notes.md) for scope and data-provenance notes.
+See [docs/REPOSITORY_LAYOUT.md](docs/REPOSITORY_LAYOUT.md) for the source-tree guide, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for component boundaries and data flow, and [docs/uml/](docs/uml/) for Mermaid UML-style design diagrams. [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) covers local setup and production hardening. [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md) describes experiment provenance and research data governance. The [learning subsystem](learning/README.md) and [research notes](research/synthetic_human_brain_program_notes.md) document their respective scope.
 
 ## Naming
 
